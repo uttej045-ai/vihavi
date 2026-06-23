@@ -1,0 +1,59 @@
+.org-stat-card {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--color-white);
+}
+
+.org-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.org-stat-title {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.org-stat-icon {
+  background-color: rgba(122, 0, 25, 0.05);
+  color: var(--color-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.org-stat-value {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1;
+}
+
+.org-stat-trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.org-stat-trend.positive {
+  color: #27c93f;
+}
+
+.org-stat-trend.negative {
+  color: #ff5f56;
+}
+
+.org-stat-trend span {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}

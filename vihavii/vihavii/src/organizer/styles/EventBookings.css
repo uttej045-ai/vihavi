@@ -1,0 +1,45 @@
+.org-bookings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.org-bookings-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.org-b-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background: var(--color-background);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.org-b-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.org-b-stat-value {
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  color: var(--color-text-main);
+}
+
+.org-bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}

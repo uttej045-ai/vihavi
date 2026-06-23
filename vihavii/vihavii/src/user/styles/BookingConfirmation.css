@@ -1,0 +1,229 @@
+/* BookingConfirmation.css */
+
+.confirmation-container {
+  background-color: var(--primary-burgundy);
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Success Header */
+.success-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 32px;
+}
+
+.success-icon {
+  color: #4caf50;
+  background: white;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  box-shadow: 0 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+.success-header h2 {
+  font-size: 1.8rem;
+  margin: 0 0 8px 0;
+}
+
+.success-header p {
+  opacity: 0.9;
+  margin: 0 0 12px 0;
+}
+
+.booking-id {
+  background: rgba(0,0,0,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* Digital Ticket */
+.ticket-wrapper {
+  width: 100%;
+  max-width: 400px;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.3));
+  margin-bottom: 32px;
+}
+
+.digital-ticket {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Hero */
+.ticket-top {
+  position: relative;
+  height: 180px;
+}
+
+.ticket-hero {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+.ticket-gradient-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0; height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.ticket-overlay-content {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 16px;
+  color: white;
+}
+
+.ticket-overlay-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.ticket-type-badge {
+  background: var(--primary-burgundy);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Middle Info */
+.ticket-middle {
+  padding: 24px 20px;
+}
+
+.ticket-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.t-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-main);
+}
+
+.t-info-item svg {
+  color: var(--primary-burgundy);
+  margin-top: 2px;
+}
+
+.t-info-item label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.t-info-item span {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Ticket Notch Divider */
+.ticket-divider {
+  position: relative;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.dash-line {
+  flex: 1;
+  border-top: 2px dashed #ccc;
+  margin: 0 12px;
+}
+
+.notch {
+  width: 24px; height: 24px;
+  background: var(--primary-burgundy);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.notch.left { left: -12px; }
+.notch.right { right: -12px; }
+
+/* Bottom QR */
+.ticket-bottom {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fafafa;
+}
+
+.qr-container {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 12px;
+}
+
+.scan-text {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Actions */
+.confirmation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.btn-download {
+  background: white;
+  color: var(--primary-burgundy);
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+}

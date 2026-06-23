@@ -1,0 +1,137 @@
+.trending-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.trending-icon {
+  color: var(--color-primary);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.trending-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.trending-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.trending-carousel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.trending-carousel::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+.trending-card {
+  min-width: 280px;
+  flex: 0 0 calc(25% - 18px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--border-radius-card);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.trending-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.trending-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.trending-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.trending-card:hover .trending-image-container img {
+  transform: scale(1.05);
+}
+
+.trending-price-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.trending-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--color-white);
+  flex-grow: 1;
+}
+
+.trending-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.4;
+  color: var(--color-dark);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.trending-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.meta-item svg {
+  color: var(--color-accent);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .trending-card {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .trending-card {
+    flex: 0 0 calc(85%);
+    min-width: unset;
+  }
+}

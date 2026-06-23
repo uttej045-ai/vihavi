@@ -1,0 +1,290 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "vihavi@gmail.com",
+      "password": "111",
+      "role": "user",
+      "name": "Vihavi"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "me",
+      "name": "Jane Doe",
+      "email": "jane.doe@example.com",
+      "phone": "+1 234 567 8900",
+      "notifications": {
+        "email": true,
+        "sms": false
+      }
+    }
+  ],
+  "dashboardStats": [
+    {
+      "id": "1",
+      "totalBookings": 12,
+      "upcomingEvents": 3,
+      "wishlistCount": 8,
+      "amountSpent": 450
+    }
+  ],
+  "recommendedEvents": [
+    {
+      "id": "1",
+      "name": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "category": "Music",
+      "price": 50,
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=400&h=300"
+    },
+    {
+      "id": "2",
+      "name": "Tech Innovators Conference",
+      "date": "Sep 10, 2026",
+      "category": "Conference",
+      "price": 120,
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400&h=300"
+    },
+    {
+      "id": "3",
+      "name": "Food & Wine Expo",
+      "date": "Oct 05, 2026",
+      "category": "Food",
+      "price": 35,
+      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=400&h=300"
+    }
+  ],
+  "recentBookings": [
+    {
+      "id": "101",
+      "eventName": "Tech Innovators Conference",
+      "date": "Sep 10, 2026",
+      "status": "Confirmed"
+    },
+    {
+      "id": "102",
+      "eventName": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "status": "Confirmed"
+    }
+  ],
+  "wishlist": [
+    {
+      "id": "4",
+      "name": "Art Gallery Opening",
+      "date": "Nov 12, 2026",
+      "category": "Arts",
+      "price": 15,
+      "image": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?auto=format&fit=crop&q=80&w=400&h=300"
+    },
+    {
+      "id": "1lMGYLg1xg8",
+      "name": "Food & Wine Expo",
+      "date": "Oct 05, 2026",
+      "category": "Food",
+      "price": 35,
+      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=400&h=300",
+      "eventId": "3"
+    },
+    {
+      "id": "9iT0ePDXiIk",
+      "name": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "category": "Music",
+      "price": 50,
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=400&h=300",
+      "eventId": "1"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "101",
+      "eventName": "Tech Innovators Conference",
+      "date": "Sep 10, 2026",
+      "status": "upcoming",
+      "tickets": 2,
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400&h=300"
+    },
+    {
+      "id": "102",
+      "eventName": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "status": "upcoming",
+      "tickets": 4,
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=400&h=300"
+    },
+    {
+      "id": "99",
+      "eventName": "Jazz Night Live",
+      "date": "Jan 10, 2026",
+      "status": "past",
+      "tickets": 1,
+      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=400&h=300"
+    },
+    {
+      "eventName": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "venue": "Central Park Arena, NY",
+      "tickets": 2,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
+      "id": "Zx11eBghi9k"
+    },
+    {
+      "eventName": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "venue": "Central Park Arena, NY",
+      "tickets": 2,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
+      "id": "QnXhFA1lfIE"
+    },
+    {
+      "eventName": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "venue": "Central Park Arena, NY",
+      "tickets": 1,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
+      "id": "3k1WaI9fcys"
+    },
+    {
+      "eventName": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "venue": "Central Park Arena, NY",
+      "tickets": 1,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
+      "id": "FxMTEchFqfg"
+    },
+    {
+      "eventName": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "venue": "Central Park Arena, NY",
+      "tickets": 2,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
+      "id": "SFF5bTCiit4"
+    },
+    {
+      "eventName": "Food & Wine Expo",
+      "date": "Oct 05, 2026",
+      "venue": "Napa Valley, CA",
+      "tickets": 2,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=800&h=400",
+      "id": "NjpYv-58k-g"
+    },
+    {
+      "eventName": "Tech Innovators Conference",
+      "date": "Sep 10, 2026",
+      "venue": "Moscone Center, SF",
+      "tickets": 3,
+      "status": "upcoming",
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800&h=400",
+      "id": "FutVTqlLSu8"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "name": "Summer Music Festival",
+      "date": "Aug 15, 2026",
+      "time": "18:00 PM",
+      "location": "Central Park Arena, NY",
+      "category": "Music",
+      "price": 50,
+      "rating": 4.8,
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
+      "description": "Experience the ultimate summer music festival with top artists from around the world. Enjoy amazing food, great company, and unforgettable performances. Gates open at 4 PM.",
+      "organizer": "Vihavi Events Team",
+      "ticketTypes": [
+        {
+          "id": "t1",
+          "name": "Early Bird",
+          "price": 50,
+          "description": "Entry for 1 person. Limited availability."
+        },
+        {
+          "id": "t2",
+          "name": "General Admission",
+          "price": 75,
+          "description": "Standard entry for 1 person."
+        },
+        {
+          "id": "t3",
+          "name": "VIP Pass",
+          "price": 150,
+          "description": "Includes front row access, free drinks, and VIP lounge."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Tech Innovators Conference",
+      "date": "Sep 10, 2026",
+      "time": "09:00 AM",
+      "location": "Moscone Center, SF",
+      "category": "Technology",
+      "price": 120,
+      "rating": 4.9,
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800&h=400",
+      "description": "Join the brightest minds in tech for a two-day conference exploring the future of AI, web development, and cloud computing.",
+      "organizer": "TechWorld",
+      "ticketTypes": [
+        {
+          "id": "t4",
+          "name": "Standard Pass",
+          "price": 120,
+          "description": "Access to all keynotes and expo hall."
+        },
+        {
+          "id": "t5",
+          "name": "All-Access Pass",
+          "price": 300,
+          "description": "Includes workshops and exclusive networking dinner."
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Food & Wine Expo",
+      "date": "Oct 05, 2026",
+      "time": "11:00 AM",
+      "location": "Napa Valley, CA",
+      "category": "Food",
+      "price": 35,
+      "rating": 4.7,
+      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=800&h=400",
+      "description": "Indulge in a weekend of premium wine tasting, culinary workshops, and dishes created by world-renowned chefs. Discover new vineyards and savor the finest foods Napa Valley has to offer.",
+      "organizer": "Culinary Union",
+      "ticketTypes": [
+        {
+          "id": "t6",
+          "name": "Standard Access",
+          "price": 35,
+          "description": "Includes standard wine tasting glass and entry."
+        },
+        {
+          "id": "t7",
+          "name": "Vintner Pass",
+          "price": 95,
+          "description": "Includes exclusive reserve tastings and chef meet-and-greet."
+        }
+      ]
+    }
+  ],
+  "categories": [],
+  "eventSchedules": [],
+  "venues": [],
+  "organizers": [],
+  "ticketTypes": [],
+  "ticketAvailability": [],
+  "bookingItems": [],
+  "payments": [],
+  "tickets": [],
+  "qrTickets": [],
+  "notifications": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

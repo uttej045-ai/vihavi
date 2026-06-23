@@ -1,0 +1,207 @@
+.org-create-event {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.org-steps-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: var(--space-md);
+  padding: 0 10px;
+}
+
+.org-steps-indicator::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 30px;
+  right: 30px;
+  height: 2px;
+  background: rgba(0,0,0,0.05);
+  z-index: 1;
+}
+
+.org-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+  color: var(--color-text-muted);
+}
+
+.org-step-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.org-step.active .org-step-num {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.org-step.completed .org-step-num {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.org-step span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.org-step.active span, .org-step.completed span {
+  color: var(--color-primary);
+}
+
+.org-create-form-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.org-form-step h2 {
+  font-size: var(--fs-md);
+  margin-bottom: var(--space-lg);
+  color: var(--color-dark);
+}
+
+.org-banner-upload {
+  margin-bottom: var(--space-lg);
+}
+
+.org-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border: 2px dashed rgba(0,0,0,0.1);
+  border-radius: var(--border-radius-md);
+  background: var(--color-background);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  gap: 8px;
+}
+
+.org-upload-label:hover {
+  border-color: var(--color-primary);
+  background: rgba(122, 0, 25, 0.02);
+  color: var(--color-primary);
+}
+
+.org-upload-label span {
+  font-weight: 600;
+}
+
+.org-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: var(--space-md);
+}
+
+.org-form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.org-form-group input, 
+.org-form-group select, 
+.org-form-group textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: var(--color-white);
+  font-family: inherit;
+  font-size: var(--fs-sm);
+  transition: border-color 0.2s;
+}
+
+.org-form-group input:focus, 
+.org-form-group select:focus, 
+.org-form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.org-form-row {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.org-form-row .org-form-group {
+  flex: 1;
+}
+
+.org-ticket-type-card {
+  padding: var(--space-md);
+  background: var(--color-background);
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.org-review-box {
+  background: var(--color-background);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-lg);
+}
+
+.org-review-box h3 {
+  margin-bottom: 12px;
+  color: var(--color-primary);
+}
+
+.org-review-box p {
+  margin-bottom: 8px;
+  font-size: var(--fs-sm);
+}
+
+.org-review-actions {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.org-form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+@media (max-width: 767px) {
+  .org-form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .org-create-form-card {
+    padding: var(--space-md);
+  }
+}

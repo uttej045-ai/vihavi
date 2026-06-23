@@ -1,0 +1,287 @@
+:root {
+  --color-primary-burgundy: #7A0019;
+  --color-premium-gold: #D4AF37;
+  --color-soft-white: #FAF8F6;
+  --color-glass-white: rgba(255, 255, 255, 0.15);
+  --color-glass-border: rgba(255, 255, 255, 0.3);
+  --font-poppins: 'Poppins', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+/* Layout from Auth.css */
+.authContainer {
+  min-height: 100vh;
+  display: flex;
+  background-color: #F8F4EE;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(122, 0, 25, 0.08), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(166, 106, 63, 0.08), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(212, 175, 55, 0.05), transparent 40%);
+  background-size: 200% 200%;
+  animation: bgPan 15s ease infinite;
+  font-family: var(--font-inter);
+  color: #333333;
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: var(--color-primary-burgundy);
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+}
+
+.backButton:hover {
+  transform: translateX(-5px);
+  color: #5A0013;
+}
+
+@media (max-width: 1024px) {
+  .backButton {
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+@keyframes bgPan {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.leftSection {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 4rem;
+  }
+}
+
+.leftContent {
+  position: relative;
+  z-index: 2;
+  color: #1a1a1a;
+}
+
+.welcomeHeading {
+  font-family: var(--font-poppins);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  color: var(--color-primary-burgundy);
+}
+
+.textGradient {
+  background: linear-gradient(135deg, #7A0019, #A66A3F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.welcomeText {
+  font-size: 1rem;
+  max-width: 80%;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.rightSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 2;
+}
+
+.logoHeader {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.logoText {
+  font-family: var(--font-poppins);
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #7A0019, #A66A3F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.tagline {
+  color: var(--color-premium-gold);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.footerText {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.footerLink {
+  color: var(--color-primary-burgundy);
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: var(--color-premium-gold);
+}
+
+.collageContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  padding: 2rem;
+}
+
+.collageImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.collageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(122, 0, 25, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Form Styles from Common.css */
+.formRow {
+  display: flex;
+  gap: 1rem;
+}
+
+.formRow > * {
+  flex: 1;
+}
+
+.formHeader {
+  font-family: var(--font-poppins);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem 0;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.divider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkboxInput {
+  accent-color: var(--color-primary-burgundy);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.forgotPassword {
+  color: #666;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.forgotPassword:hover {
+  color: var(--color-primary-burgundy);
+}

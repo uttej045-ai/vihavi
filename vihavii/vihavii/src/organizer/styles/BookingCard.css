@@ -1,0 +1,125 @@
+.org-booking-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.org-booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: var(--space-sm);
+}
+
+.org-booking-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.org-booking-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(122, 0, 25, 0.1);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--fs-md);
+}
+
+.org-booking-name {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin: 0 0 4px 0;
+}
+
+.org-booking-email {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+.org-booking-status {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-success {
+  background-color: rgba(39, 201, 63, 0.1);
+  color: #27c93f;
+}
+
+.badge-warning {
+  background-color: rgba(255, 189, 46, 0.1);
+  color: #d4a000;
+}
+
+.badge-danger {
+  background-color: rgba(255, 95, 86, 0.1);
+  color: #ff5f56;
+}
+
+.badge-secondary {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-text-muted);
+}
+
+.org-booking-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.org-booking-meta {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-background);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.org-booking-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-transform: uppercase;
+}
+
+.info-value {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+.event-name {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.ticket-count {
+  font-weight: 700;
+}
