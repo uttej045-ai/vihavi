@@ -55,21 +55,18 @@ const Login = () => {
       setIsLoading(true);
       setErrors(prev => ({ ...prev, server: '' })); // Clear previous server errors
       
-      // Mock Organizer Login
-      if (formData.email === 'event@gmail.com' && formData.password === '123456') {
-        localStorage.setItem("isAuthenticated", "true");
-        localStorage.setItem("userRole", "organizer");
-        navigate('/organizer');
-        setIsLoading(false);
-        return;
-      }
-      
       try {
-        await authService.login(formData.email, formData.password);
-        localStorage.setItem("userRole", "user");
-        navigate('/user');
+        const { user } = await authService.login(formData.email, formData.password);
+        const role = user.role.toLowerCase();
+        if (role === 'organizer') {
+          navigate('/organizer');
+        } else if (role === 'admin') {
+          navigate('/admin');
+        } else {
+          navigate('/user');
+        }
       } catch (err) {
-        // Display specific error messages like "Backend Server Unavailable"
+        // Display specific error messages
         setErrors(prev => ({ ...prev, server: err.message || 'Login failed' }));
       } finally {
         setIsLoading(false);

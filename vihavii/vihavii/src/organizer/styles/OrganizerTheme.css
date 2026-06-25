@@ -1,0 +1,115 @@
+/* ── Vihavi Luxury Theme (Black, Burgundy, Gold) ── */
+
+:root {
+  --org-bg-dark: #0A0A0C;
+  --org-bg-card: rgba(22, 11, 15, 0.65); /* translucent burgundy black */
+  --org-burgundy: #580F1D;
+  --org-burgundy-light: #8E1F30;
+  --org-burgundy-dark: #2F050D;
+  --org-gold: #D4AF37;
+  --org-gold-light: #F3E5AB;
+  --org-gold-dark: #AA7C11;
+  --org-text-light: #F5F5F7;
+  --org-text-muted: #A1A1A6;
+  --org-glass-border: rgba(212, 175, 55, 0.15); /* light gold border */
+  --org-glass-border-focus: rgba(212, 175, 55, 0.4);
+  --org-glow-shadow: 0 8px 32px 0 rgba(88, 15, 29, 0.3);
+  --org-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --org-radius-sm: 8px;
+  --org-radius-md: 16px;
+  --org-radius-lg: 24px;
+}
+
+/* Glassmorphism Luxury Card utility */
+.luxury-card {
+  background: var(--org-bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--org-glass-border);
+  box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  border-radius: var(--org-radius-md);
+  padding: 1.5rem;
+  transition: var(--org-transition);
+}
+
+.luxury-card:hover {
+  border-color: rgba(212, 175, 55, 0.25);
+  box-shadow: 0 12px 48px 0 rgba(88, 15, 29, 0.4);
+}
+
+/* Metallic gold gradient text */
+.luxury-text-gradient {
+  background: linear-gradient(135deg, var(--org-gold-light) 0%, var(--org-gold) 50%, var(--org-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Luxury button styling */
+.luxury-btn-primary {
+  background: linear-gradient(135deg, var(--org-burgundy) 0%, var(--org-burgundy-light) 100%);
+  color: #FFF !important;
+  border: 1px solid var(--org-gold);
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(88, 15, 29, 0.4);
+  transition: var(--org-transition);
+}
+
+.luxury-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+  border-color: var(--org-gold-light);
+}
+
+.luxury-btn-outline {
+  background: transparent;
+  color: var(--org-gold) !important;
+  border: 1px solid var(--org-gold);
+  border-radius: 50px;
+  padding: 11px 26px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--org-transition);
+}
+
+.luxury-btn-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--org-gold-light);
+}
+
+/* Standard Inputs under Dark Luxury style */
+.luxury-input, .luxury-select, .luxury-textarea {
+  background: rgba(25, 25, 30, 0.6) !important;
+  border: 1px solid var(--org-glass-border) !important;
+  color: var(--org-text-light) !important;
+  border-radius: var(--org-radius-sm) !important;
+  padding: 10px 14px !important;
+  outline: none !important;
+  width: 100% !important;
+  transition: var(--org-transition) !important;
+}
+
+.luxury-input:focus, .luxury-select:focus, .luxury-textarea:focus {
+  border-color: var(--org-gold) !important;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--org-bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--org-burgundy);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--org-burgundy-light);
+}

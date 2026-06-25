@@ -45,7 +45,7 @@ const EventDetails = () => {
 
   const handleCheckout = () => {
     if (totalTickets === 0) {
-      alert("Please select at least one ticket.");
+      showToast("Please select at least one ticket.", "warning");
       return;
     }
     // Navigate to checkout with selected tickets in state

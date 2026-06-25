@@ -7,10 +7,13 @@ import InputField from '../../components/common/Input/Input';
 import AnimatedButton from '../../components/common/Button/Button';
 import SocialButtons from '../../components/common/SocialButtons/SocialButtons';
 import UserTypeSelector from '../../components/common/UserTypeSelector/UserTypeSelector';
+import { authService } from '../../services/authService';
+import { useToast } from '../../components/common/ToastContext';
 import './Register.css';
 
 const Register = () => {
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const [formData, setFormData] = useState({
     userType: 'attendee',
     fullName: '',
@@ -50,12 +53,16 @@ const Register = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log('Registration attempt with:', formData);
-      alert('Account created successfully. Please log in to continue.');
-      navigate('/login');
+      try {
+        await authService.register(formData);
+        showToast('Account created successfully! Please log in to continue.', 'success');
+        navigate('/login');
+      } catch (err) {
+        setErrors(prev => ({ ...prev, email: err.message }));
+      }
     }
   };
 

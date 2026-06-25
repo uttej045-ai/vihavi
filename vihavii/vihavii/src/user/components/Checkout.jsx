@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import bookingService from '../../services/bookingService';
+import { useToast } from '../../components/common/ToastContext';
 import '../styles/Checkout.css';
 import { ArrowLeft, ShieldCheck, CreditCard, Wallet, Landmark } from 'lucide-react';
 
@@ -9,6 +10,7 @@ const Checkout = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [processing, setProcessing] = useState(false);
+  const { showToast } = useToast();
 
   const { event, selectedTickets, totalTickets, totalPrice } = location.state || {};
 
@@ -40,7 +42,7 @@ const Checkout = () => {
       
     } catch (error) {
       console.error("Payment failed", error);
-      alert("Payment failed. Please try again.");
+      showToast("Payment failed. Please try again.", "error");
       setProcessing(false);
     }
   };

@@ -9,6 +9,7 @@ const Profile = lazy(() => import('./Profile'));
 const EventDetails = lazy(() => import('./EventDetails'));
 const Checkout = lazy(() => import('./Checkout'));
 const BookingConfirmation = lazy(() => import('./BookingConfirmation'));
+const MyTickets = lazy(() => import('./MyTickets'));
 
 const UserLayout = lazy(() => import('./UserLayout'));
 
@@ -19,6 +20,7 @@ const UserRoutes = () => {
         <Route element={<UserLayout />}>
           <Route path="/" element={<Navigate to="home" replace />} />
           <Route path="home" element={<UserHome />} />
+          <Route path="tickets" element={<MyTickets />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="bookings" element={<Bookings />} />
           <Route path="profile" element={<Profile />} />
@@ -32,3 +34,4 @@ const UserRoutes = () => {
 };
 
 export default UserRoutes;
+

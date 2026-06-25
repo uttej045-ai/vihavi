@@ -6,6 +6,27 @@
       "password": "111",
       "role": "user",
       "name": "Vihavi"
+    },
+    {
+      "id": "mock-organizer-456",
+      "email": "organizer@vihavi.dev",
+      "password": "password",
+      "role": "ORGANIZER",
+      "name": "Test Organizer"
+    },
+    {
+      "id": "event@gmail.com",
+      "email": "event@gmail.com",
+      "password": "123456",
+      "role": "ORGANIZER",
+      "name": "Event Manager"
+    },
+    {
+      "id": "admin-1",
+      "email": "admin@vihavi.dev",
+      "password": "admin123",
+      "role": "admin",
+      "name": "Platform Admin"
     }
   ],
   "profiles": [
@@ -100,104 +121,123 @@
   "bookings": [
     {
       "id": "101",
+      "eventId": "2",
+      "ticketId": "t4",
+      "userName": "John Doe",
+      "userEmail": "john@example.com",
+      "userPhone": "+91 99999 88888",
+      "ticketName": "Standard Pass",
+      "ticketPrice": 120,
+      "quantity": 2,
+      "totalPaid": 240,
+      "date": "2026-06-20",
+      "status": "Confirmed",
+      "checkInStatus": "Checked In",
       "eventName": "Tech Innovators Conference",
-      "date": "Sep 10, 2026",
-      "status": "upcoming",
       "tickets": 2,
-      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400&h=300"
+      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400&h=300",
+      "checkedInAt": "2026-06-25T09:58:40.472Z"
     },
     {
       "id": "102",
+      "eventId": "1",
+      "ticketId": "t2",
+      "userName": "Alice Smith",
+      "userEmail": "alice@example.com",
+      "userPhone": "+91 88888 77777",
+      "ticketName": "General Admission",
+      "ticketPrice": 75,
+      "quantity": 4,
+      "totalPaid": 300,
+      "date": "2026-06-21",
+      "status": "Confirmed",
+      "checkInStatus": "Pending",
+      "checkedInAt": null,
       "eventName": "Summer Music Festival",
-      "date": "Aug 15, 2026",
-      "status": "upcoming",
       "tickets": 4,
       "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=400&h=300"
     },
     {
-      "id": "99",
-      "eventName": "Jazz Night Live",
-      "date": "Jan 10, 2026",
-      "status": "past",
+      "id": "103",
+      "eventId": "1",
+      "ticketId": "t3",
+      "userName": "Bob Johnson",
+      "userEmail": "bob@example.com",
+      "userPhone": "+91 77777 66666",
+      "ticketName": "VIP Pass",
+      "ticketPrice": 150,
+      "quantity": 1,
+      "totalPaid": 150,
+      "date": "2026-06-22",
+      "status": "Pending",
+      "checkInStatus": "Pending",
+      "eventName": "Summer Music Festival",
       "tickets": 1,
-      "image": "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=400&h=300"
-    },
-    {
-      "eventName": "Summer Music Festival",
-      "date": "Aug 15, 2026",
-      "venue": "Central Park Arena, NY",
-      "tickets": 2,
-      "status": "upcoming",
-      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
-      "id": "Zx11eBghi9k"
-    },
-    {
-      "eventName": "Summer Music Festival",
-      "date": "Aug 15, 2026",
-      "venue": "Central Park Arena, NY",
-      "tickets": 2,
-      "status": "upcoming",
-      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
-      "id": "QnXhFA1lfIE"
-    },
-    {
-      "eventName": "Summer Music Festival",
-      "date": "Aug 15, 2026",
-      "venue": "Central Park Arena, NY",
-      "tickets": 1,
-      "status": "upcoming",
-      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
-      "id": "3k1WaI9fcys"
-    },
-    {
-      "eventName": "Summer Music Festival",
-      "date": "Aug 15, 2026",
-      "venue": "Central Park Arena, NY",
-      "tickets": 1,
-      "status": "upcoming",
-      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
-      "id": "FxMTEchFqfg"
-    },
-    {
-      "eventName": "Summer Music Festival",
-      "date": "Aug 15, 2026",
-      "venue": "Central Park Arena, NY",
-      "tickets": 2,
-      "status": "upcoming",
-      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
-      "id": "SFF5bTCiit4"
-    },
-    {
-      "eventName": "Food & Wine Expo",
-      "date": "Oct 05, 2026",
-      "venue": "Napa Valley, CA",
-      "tickets": 2,
-      "status": "upcoming",
-      "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=800&h=400",
-      "id": "NjpYv-58k-g"
-    },
-    {
-      "eventName": "Tech Innovators Conference",
-      "date": "Sep 10, 2026",
-      "venue": "Moscone Center, SF",
-      "tickets": 3,
-      "status": "upcoming",
-      "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800&h=400",
-      "id": "FutVTqlLSu8"
+      "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=400&h=300"
     }
   ],
   "events": [
     {
       "id": "1",
-      "name": "Summer Music Festival",
+      "name": "Summer Music Festival 2026",
+      "summary": "Experience the ultimate summer music festival with top artists.",
+      "description": "Experience the ultimate summer music festival with top artists from around the world. Enjoy amazing food, great company, and unforgettable performances. Gates open at 4 PM.",
+      "category": "Music",
+      "tags": "festival, summer, music",
+      "type": "Public",
+      "venue": "Central Park Arena",
+      "address": "Central Park Arena, NY",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA",
+      "mapsLink": "https://maps.google.com",
+      "isOnline": false,
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-15",
+      "startTime": "18:00",
+      "endTime": "23:00",
+      "timeZone": "EST",
+      "logo": "",
+      "background": "burgundy",
+      "qrPlacement": "center",
+      "banner": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
+      "gallery": [],
+      "video": "",
+      "terms": "No refunds within 24 hours of event.",
+      "refundPolicy": "Refundable up to 7 days before.",
+      "instructions": "Carry your ID card and QR ticket.",
+      "whatToBring": "Good vibes and your ticket.",
+      "isPrivate": false,
+      "isInviteOnly": false,
+      "guestList": [],
+      "questions": [
+        "Name",
+        "Email",
+        "Phone"
+      ],
+      "coupons": [
+        "SUMMER50"
+      ],
+      "isSoldOut": false,
+      "enableWaitlist": true,
+      "notifyWaitlist": true,
+      "faqs": [
+        {
+          "q": "Is there parking available?",
+          "a": "Yes, free parking is available."
+        }
+      ],
+      "visibility": "Public",
+      "status": "Published",
+      "bookingLimit": 5,
+      "cancellationPolicy": "Standard",
+      "createdBy": "mock-organizer-456",
       "date": "Aug 15, 2026",
       "time": "18:00 PM",
       "location": "Central Park Arena, NY",
-      "category": "Music",
       "price": 50,
       "rating": 4.8,
       "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=800&h=400",
-      "description": "Experience the ultimate summer music festival with top artists from around the world. Enjoy amazing food, great company, and unforgettable performances. Gates open at 4 PM.",
       "organizer": "Vihavi Events Team",
       "ticketTypes": [
         {
@@ -218,19 +258,63 @@
           "price": 150,
           "description": "Includes front row access, free drinks, and VIP lounge."
         }
-      ]
+      ],
+      "featured": true
     },
     {
       "id": "2",
-      "name": "Tech Innovators Conference",
+      "name": "Tech Innovators Conference 2026",
+      "summary": "Join the brightest minds in tech for a two-day conference.",
+      "description": "Join the brightest minds in tech for a two-day conference exploring the future of AI, web development, and cloud computing.",
+      "category": "Technology",
+      "tags": "tech, conference, AI",
+      "type": "Public",
+      "venue": "Moscone Center",
+      "address": "Moscone Center, SF",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA",
+      "mapsLink": "https://maps.google.com",
+      "isOnline": false,
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-11",
+      "startTime": "09:00",
+      "endTime": "17:00",
+      "timeZone": "PST",
+      "logo": "",
+      "background": "black",
+      "qrPlacement": "bottom-right",
+      "banner": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800&h=400",
+      "gallery": [],
+      "video": "",
+      "terms": "Strict security check.",
+      "refundPolicy": "No refunds.",
+      "instructions": "Arrive 30 minutes early.",
+      "whatToBring": "Laptop, Notebook.",
+      "isPrivate": false,
+      "isInviteOnly": false,
+      "guestList": [],
+      "questions": [
+        "Name",
+        "Email",
+        "Company"
+      ],
+      "coupons": [],
+      "isSoldOut": false,
+      "enableWaitlist": false,
+      "notifyWaitlist": false,
+      "faqs": [],
+      "visibility": "Public",
+      "status": "Published",
+      "bookingLimit": 2,
+      "cancellationPolicy": "No-Cancellation",
+      "createdBy": "mock-organizer-456",
       "date": "Sep 10, 2026",
       "time": "09:00 AM",
       "location": "Moscone Center, SF",
-      "category": "Technology",
       "price": 120,
       "rating": 4.9,
       "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800&h=400",
-      "description": "Join the brightest minds in tech for a two-day conference exploring the future of AI, web development, and cloud computing.",
       "organizer": "TechWorld",
       "ticketTypes": [
         {
@@ -250,14 +334,58 @@
     {
       "id": "3",
       "name": "Food & Wine Expo",
+      "summary": "Indulge in a weekend of premium wine tasting.",
+      "description": "Indulge in a weekend of premium wine tasting, culinary workshops, and dishes created by world-renowned chefs. Discover new vineyards and savor the finest foods Napa Valley has to offer.",
+      "category": "Food",
+      "tags": "food, wine, expo",
+      "type": "Public",
+      "venue": "Napa Valley Venue",
+      "address": "Napa Valley, CA",
+      "city": "Napa Valley",
+      "state": "CA",
+      "country": "USA",
+      "mapsLink": "https://maps.google.com",
+      "isOnline": false,
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-06",
+      "startTime": "11:00",
+      "endTime": "18:00",
+      "timeZone": "PST",
+      "logo": "",
+      "background": "gold",
+      "qrPlacement": "center",
+      "banner": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=800&h=400",
+      "gallery": [],
+      "video": "",
+      "terms": "Must be 21+ to consume alcohol.",
+      "refundPolicy": "Refundable up to 14 days before.",
+      "instructions": "Bring valid government ID.",
+      "whatToBring": "Valid ID.",
+      "isPrivate": false,
+      "isInviteOnly": false,
+      "guestList": [],
+      "questions": [
+        "Name",
+        "Email"
+      ],
+      "coupons": [
+        "TECH10"
+      ],
+      "isSoldOut": false,
+      "enableWaitlist": false,
+      "notifyWaitlist": false,
+      "faqs": [],
+      "visibility": "Public",
+      "status": "Published",
+      "bookingLimit": 4,
+      "cancellationPolicy": "Standard",
+      "createdBy": "mock-organizer-456",
       "date": "Oct 05, 2026",
       "time": "11:00 AM",
       "location": "Napa Valley, CA",
-      "category": "Food",
       "price": 35,
       "rating": 4.7,
       "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80&w=800&h=400",
-      "description": "Indulge in a weekend of premium wine tasting, culinary workshops, and dishes created by world-renowned chefs. Discover new vineyards and savor the finest foods Napa Valley has to offer.",
       "organizer": "Culinary Union",
       "ticketTypes": [
         {
@@ -273,18 +401,430 @@
           "description": "Includes exclusive reserve tastings and chef meet-and-greet."
         }
       ]
+    },
+    {
+      "name": "cb",
+      "summary": "",
+      "description": "cbx",
+      "category": "Tech",
+      "format": "In-Person",
+      "ageRestriction": "All Ages",
+      "tags": "cbx",
+      "organizerName": "Vihavi Luxury Events Team",
+      "organizerEmail": "organizer@vihavi.dev",
+      "venue": "cxb",
+      "address": "cb",
+      "city": "cb",
+      "state": "cbx",
+      "country": "United Kingdom",
+      "zip": "cbx",
+      "mapPin": "17.3850, 78.4867",
+      "accessInstructions": "cb",
+      "virtualLink": "",
+      "virtualPlatform": "Zoom",
+      "isMultiDay": false,
+      "startDate": "2026-06-27",
+      "endDate": "",
+      "startTime": "22:22",
+      "endTime": "04:50",
+      "timeZone": "IST",
+      "agenda": [],
+      "tickets": [
+        {
+          "name": "General Admission",
+          "desc": "Standard entry pass.",
+          "price": 0,
+          "quantity": 100,
+          "saleStart": "",
+          "saleEnd": "",
+          "minLimit": 1,
+          "maxLimit": 4,
+          "benefits": ""
+        }
+      ],
+      "isFree": false,
+      "banner": "",
+      "gallery": [],
+      "video": "",
+      "faqs": [],
+      "coupons": [],
+      "visibility": "Public",
+      "requireApproval": false,
+      "attendeeListVisibility": "Hidden",
+      "enableWaitlist": false,
+      "registrationDeadline": "",
+      "cancellationPolicy": "Moderate",
+      "cancellationDetails": "",
+      "terms": "",
+      "contactEmail": "support@vihavi.dev",
+      "contactPhone": "+91 99000 88000",
+      "socialTwitter": "",
+      "socialLinkedin": "",
+      "socialInstagram": "",
+      "status": "Draft",
+      "publishDate": "",
+      "agreeToTerms": false,
+      "updatedAt": "2026-06-25T10:03:41.815Z",
+      "id": "a28Xs5djUuY",
+      "createdAt": "2026-06-25T10:03:41.815Z",
+      "createdBy": "organizer@vihavi.dev"
+    },
+    {
+      "name": "sfsffsf",
+      "summary": "",
+      "description": "",
+      "category": "Culture",
+      "format": "In-Person",
+      "ageRestriction": "All Ages",
+      "tags": "",
+      "organizerName": "Vihavi Luxury Events Team",
+      "organizerEmail": "organizer@vihavi.dev",
+      "venue": "sf",
+      "address": "sf",
+      "city": "sf",
+      "state": "sf",
+      "country": "India",
+      "zip": "",
+      "mapPin": "17.3850, 78.4867",
+      "accessInstructions": "sf",
+      "virtualLink": "",
+      "virtualPlatform": "Zoom",
+      "isMultiDay": false,
+      "startDate": "2026-07-03",
+      "endDate": "",
+      "startTime": "10:30",
+      "endTime": "14:30",
+      "timeZone": "IST",
+      "agenda": [],
+      "tickets": [
+        {
+          "name": "General Admission",
+          "desc": "Standard entry pass.",
+          "price": 0,
+          "quantity": 100,
+          "saleStart": "",
+          "saleEnd": "",
+          "minLimit": 1,
+          "maxLimit": 4,
+          "benefits": ""
+        }
+      ],
+      "isFree": false,
+      "banner": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=1200",
+      "gallery": [],
+      "video": "saccasf",
+      "faqs": [
+        {
+          "q": "Is there parking available at the venue?",
+          "a": "Yes, valet parking and secure guest self-parking are available at the main venue lot."
+        }
+      ],
+      "coupons": [
+        {
+          "code": "DSFSF",
+          "discountType": "Percentage",
+          "value": 10,
+          "limit": 100,
+          "validFrom": "",
+          "validUntil": "",
+          "applicableTickets": [],
+          "active": true
+        }
+      ],
+      "visibility": "Public",
+      "requireApproval": false,
+      "attendeeListVisibility": "Public",
+      "enableWaitlist": true,
+      "registrationDeadline": "",
+      "cancellationPolicy": "Moderate",
+      "cancellationDetails": "",
+      "terms": "",
+      "contactEmail": "support@vihavi.dev",
+      "contactPhone": "+91 99000 88000",
+      "socialTwitter": "",
+      "socialLinkedin": "",
+      "socialInstagram": "",
+      "status": "Published",
+      "publishDate": "",
+      "agreeToTerms": true,
+      "updatedAt": "2026-06-25T11:26:10.102Z",
+      "id": "U607aVXAUbc",
+      "createdAt": "2026-06-25T11:26:10.102Z",
+      "createdBy": "event@gmail.com"
     }
   ],
   "categories": [],
   "eventSchedules": [],
   "venues": [],
-  "organizers": [],
+  "organizers": [
+    {
+      "id": "mock-organizer-456",
+      "name": "Vihavi Event Management",
+      "email": "organizer@vihavi.dev",
+      "phone": "+91 98765 43210",
+      "location": "Hyderabad, India",
+      "about": "We are a premier event management company specializing in tech conferences, open mics, and exclusive social gatherings across India.",
+      "logo": "",
+      "website": "https://vihavi.dev",
+      "twitter": "@vihavievents",
+      "linkedin": "linkedin.com/company/vihavi"
+    }
+  ],
   "ticketTypes": [],
   "ticketAvailability": [],
   "bookingItems": [],
-  "payments": [],
-  "tickets": [],
+  "payments": [
+    {
+      "id": "p101",
+      "bookingId": "101",
+      "amount": 240,
+      "date": "2026-06-20",
+      "method": "Razorpay",
+      "status": "Success"
+    },
+    {
+      "id": "p102",
+      "bookingId": "102",
+      "amount": 300,
+      "date": "2026-06-21",
+      "method": "Razorpay",
+      "status": "Success"
+    },
+    {
+      "id": "p103",
+      "bookingId": "103",
+      "amount": 150,
+      "date": "2026-06-22",
+      "method": "Razorpay",
+      "status": "Pending"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "t1",
+      "eventId": "1",
+      "name": "Early Bird",
+      "price": 50,
+      "quantity": 100,
+      "sold": 40,
+      "saleStart": "2026-06-01",
+      "saleEnd": "2026-07-01"
+    },
+    {
+      "id": "t2",
+      "eventId": "1",
+      "name": "General Admission",
+      "price": 75,
+      "quantity": 200,
+      "sold": 120,
+      "saleStart": "2026-07-01",
+      "saleEnd": "2026-08-14"
+    },
+    {
+      "id": "t3",
+      "eventId": "1",
+      "name": "VIP Pass",
+      "price": 150,
+      "quantity": 50,
+      "sold": 15,
+      "saleStart": "2026-06-01",
+      "saleEnd": "2026-08-14"
+    },
+    {
+      "id": "t4",
+      "eventId": "2",
+      "name": "Standard Pass",
+      "price": 120,
+      "quantity": 300,
+      "sold": 85,
+      "saleStart": "2026-06-01",
+      "saleEnd": "2026-09-09"
+    },
+    {
+      "id": "HovJbj0p25E",
+      "eventId": "ll0i2pb",
+      "name": "General Admission",
+      "price": 0,
+      "quantity": 100,
+      "sold": 0,
+      "saleStart": "2026-06-27",
+      "saleEnd": "2026-06-27"
+    },
+    {
+      "id": "tZOB9xnHFn0",
+      "eventId": "lqcbhod",
+      "name": "General Admission",
+      "price": 0,
+      "quantity": 100,
+      "sold": 0,
+      "saleStart": "2026-07-03",
+      "saleEnd": "2026-07-03"
+    }
+  ],
   "qrTickets": [],
-  "notifications": [],
+  "notifications": [
+    {
+      "id": "n1",
+      "type": "booking",
+      "message": "New booking for Summer Music Festival by Alice Smith (4 tickets)",
+      "timestamp": "2026-06-21T14:32:00Z",
+      "read": false
+    },
+    {
+      "id": "n2",
+      "type": "payment",
+      "message": "Payment of ₹150 pending from Bob Johnson",
+      "timestamp": "2026-06-22T09:15:00Z",
+      "read": false
+    },
+    {
+      "type": "booking",
+      "message": "Created new event \"cb\" successfully.",
+      "timestamp": "2026-06-25T10:03:41.853Z",
+      "read": false,
+      "id": "fUb85PMYq_k"
+    },
+    {
+      "type": "booking",
+      "message": "Created new event \"sfsffsf\" successfully.",
+      "timestamp": "2026-06-25T11:26:10.152Z",
+      "read": false,
+      "id": "RulbGZopH60"
+    }
+  ],
+  "coupons": [
+    {
+      "id": "c1",
+      "eventId": "1",
+      "code": "SUMMER50",
+      "discountType": "Percentage",
+      "value": 50,
+      "expiry": "2026-08-01"
+    },
+    {
+      "id": "c2",
+      "eventId": "2",
+      "code": "TECH10",
+      "discountType": "Fixed Amount",
+      "value": 10,
+      "expiry": "2026-09-01"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "f1",
+      "eventId": "1",
+      "question": "Is outside food allowed?",
+      "answer": "No, outside food and drinks are not allowed inside the venue."
+    }
+  ],
+  "attendees": [
+    {
+      "id": "a1",
+      "bookingId": "101",
+      "eventId": "2",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+91 99999 88888",
+      "company": "TechCorp",
+      "checkedIn": false
+    },
+    {
+      "id": "a2",
+      "bookingId": "102",
+      "eventId": "1",
+      "name": "Alice Smith",
+      "email": "alice@example.com",
+      "phone": "+91 88888 77777",
+      "company": "Music Fan",
+      "checkedIn": false,
+      "checkedInAt": null
+    }
+  ],
+  "supportTickets": [
+    {
+      "id": "st1",
+      "userId": "1",
+      "subject": "Ticket not received after payment",
+      "category": "Payment",
+      "status": "Open",
+      "priority": "High",
+      "createdAt": "2026-06-24T10:00:00Z"
+    },
+    {
+      "id": "st2",
+      "userId": "2",
+      "subject": "Unable to login after email verification",
+      "category": "Auth",
+      "status": "Open",
+      "priority": "Medium",
+      "createdAt": "2026-06-24T09:30:00Z"
+    },
+    {
+      "id": "st3",
+      "userId": "3",
+      "subject": "Refund not processed after 7 days",
+      "category": "Refund",
+      "status": "In Progress",
+      "priority": "High",
+      "createdAt": "2026-06-23T15:00:00Z"
+    },
+    {
+      "id": "st4",
+      "userId": "1",
+      "subject": "Event page showing wrong date",
+      "category": "Content",
+      "status": "Closed",
+      "priority": "Low",
+      "createdAt": "2026-06-22T12:00:00Z"
+    },
+    {
+      "id": "st5",
+      "userId": "4",
+      "subject": "QR code not scanning at venue",
+      "category": "Tickets",
+      "status": "Open",
+      "priority": "Critical",
+      "createdAt": "2026-06-25T08:00:00Z"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "al1",
+      "type": "Server",
+      "severity": "Critical",
+      "message": "API response time exceeded threshold",
+      "area": "Payments API",
+      "status": "Active",
+      "createdAt": "2026-06-25T08:50:00Z"
+    },
+    {
+      "id": "al2",
+      "type": "Security",
+      "severity": "High",
+      "message": "Multiple failed login attempts detected",
+      "area": "Auth Service",
+      "status": "In Progress",
+      "createdAt": "2026-06-25T08:25:00Z"
+    },
+    {
+      "id": "al3",
+      "type": "Content",
+      "severity": "Medium",
+      "message": "Policy scan flagged 2 event listings",
+      "area": "Event Management",
+      "status": "Active",
+      "createdAt": "2026-06-25T08:00:00Z"
+    },
+    {
+      "id": "al4",
+      "type": "Payout",
+      "severity": "Low",
+      "message": "Weekly payout batch completed with 2 exceptions",
+      "area": "Finance",
+      "status": "Resolved",
+      "createdAt": "2026-06-25T06:00:00Z"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
