@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import AdminHeader from './AdminHeader';
 import AdminSidebar from './AdminSidebar';
 import '../styles/AdminTheme.css';
 
 const AdminLayout = () => {
-  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const role = (localStorage.getItem('userRole') || localStorage.getItem('role') || '').toLowerCase();
-    const isAuthenticated = localStorage.getItem('isAuthenticated') === 'true';
-    if (!isAuthenticated || role !== 'admin') {
-      navigate('/login');
-    }
-  }, [navigate]);
 
   return (
     <div className="admin-portal">

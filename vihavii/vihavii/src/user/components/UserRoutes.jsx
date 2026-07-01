@@ -11,6 +11,8 @@ const Checkout = lazy(() => import('./Checkout'));
 const BookingConfirmation = lazy(() => import('./BookingConfirmation'));
 const MyTickets = lazy(() => import('./MyTickets'));
 
+const UserNotifications = lazy(() => import('./UserNotifications'));
+
 const UserLayout = lazy(() => import('./UserLayout'));
 
 const UserRoutes = () => {
@@ -24,6 +26,7 @@ const UserRoutes = () => {
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="bookings" element={<Bookings />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="notifications" element={<UserNotifications />} />
           <Route path="event/:id" element={<EventDetails />} />
           <Route path="checkout/:id" element={<Checkout />} />
           <Route path="confirmation/:id" element={<BookingConfirmation />} />

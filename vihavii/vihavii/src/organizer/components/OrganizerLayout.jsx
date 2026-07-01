@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import OrganizerHeader from './OrganizerHeader';
 import OrganizerSidebar from './OrganizerSidebar';
 import OrganizerBottomNav from './OrganizerBottomNav';
@@ -7,18 +7,7 @@ import '../styles/OrganizerTheme.css'; // Global luxury theme
 import '../styles/OrganizerLayout.css';
 
 const OrganizerLayout = () => {
-  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    // Role verification guard
-    const role = localStorage.getItem("userRole") || localStorage.getItem("role")?.toLowerCase();
-    const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
-    
-    if (!isAuthenticated || role !== "organizer") {
-      navigate('/login');
-    }
-  }, [navigate]);
 
   return (
     <div className="organizer-layout">

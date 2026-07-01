@@ -132,7 +132,7 @@ const UserLayout = () => {
           )}
 
           {/* Notifications */}
-          <button className="icon-btn notif-btn" style={{ position: 'relative' }}>
+          <button className="icon-btn notif-btn" style={{ position: 'relative' }} onClick={() => navigate('/user/notifications')}>
             <Bell size={18} />
             {notifCount > 0 && (
               <span className="notif-badge">{notifCount}</span>

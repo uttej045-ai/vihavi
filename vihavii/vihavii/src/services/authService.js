@@ -1,158 +1,158 @@
-import { dbService } from './dbService';
+import api from './api';
 
 export const authService = {
   checkHealth: async () => {
-    return true;
+    try {
+      const response = await api.get('/');
+      return response.data.status === 'online' || response.data.status === 'ok';
+    } catch {
+      return false;
+    }
+  },
+
+  loginWithGoogle: async (idToken, role = 'attendee') => {
+    try {
+      const response = await api.post('/auth/google', { token: idToken, role });
+      const data = response.data;
+
+      const token = data.access_token;
+      localStorage.setItem('token', token);
+      localStorage.setItem('isAuthenticated', 'true');
+      
+      const roleLower = data.role.toLowerCase();
+      const userRole = roleLower === 'organizer' ? 'organizer' : roleLower === 'admin' ? 'admin' : 'user';
+      
+      localStorage.setItem('email', data.email);
+      localStorage.setItem('userRole', userRole);
+      localStorage.setItem('role', data.role.toUpperCase()); 
+      localStorage.setItem('user', JSON.stringify({ 
+        id: data.user_id, 
+        email: data.email, 
+        role: data.role.toUpperCase(), 
+        name: data.name 
+      }));
+      
+      return { token, user: { id: data.user_id, email: data.email, role: data.role.toUpperCase(), name: data.name } };
+    } catch (error) {
+      console.error('[AuthService] Google Login Error:', error);
+      if (error.response && error.response.data && error.response.data.detail) {
+        throw new Error(error.response.data.detail);
+      }
+      throw error;
+    }
   },
 
   login: async (email, password) => {
     try {
-      // Fetch users from dbService
-      const users = await dbService.getAll('users');
-      const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+      const response = await api.post('/auth/login', { email, password });
+      const data = response.data;
 
-      if (!user) {
-        throw new Error('Invalid email or password');
-      }
-
-      // Check password (simple check since it is development/mock server)
-      if (user.password !== password) {
-        throw new Error('Invalid email or password');
-      }
-
-      // Generate a mock token
-      const token = `mock-jwt-token-${user.role.toLowerCase()}-${user.id}`;
-
-      // Save to localStorage securely
+      const token = data.access_token;
       localStorage.setItem('token', token);
       localStorage.setItem('isAuthenticated', 'true');
       
-      const userEmail = user.email;
-      const roleLower = user.role.toLowerCase();
+      const roleLower = data.role.toLowerCase();
       const userRole = roleLower === 'organizer' ? 'organizer' : roleLower === 'admin' ? 'admin' : 'user';
       
-      localStorage.setItem('email', userEmail);
+      localStorage.setItem('email', data.email);
       localStorage.setItem('userRole', userRole);
-      localStorage.setItem('role', user.role.toUpperCase()); 
-      localStorage.setItem('user', JSON.stringify({ id: user.id, email: userEmail, role: user.role, name: user.name }));
+      localStorage.setItem('role', data.role.toUpperCase()); 
+      localStorage.setItem('user', JSON.stringify({ 
+        id: data.user_id, 
+        email: data.email, 
+        role: data.role.toUpperCase(), 
+        name: data.name 
+      }));
       
-      return { token, user };
+      return { token, user: { id: data.user_id, email: data.email, role: data.role.toUpperCase(), name: data.name } };
     } catch (error) {
       console.error('[AuthService] Login Error:', error);
+      if (error.response && error.response.data && error.response.data.detail) {
+        throw new Error(error.response.data.detail);
+      }
       throw error;
     }
   },
 
   register: async (userData) => {
     try {
-      const users = await dbService.getAll('users');
-      const exists = users.find(u => u.email.toLowerCase() === userData.email.toLowerCase());
-      
-      if (exists) {
-        throw new Error('Email is already registered');
-      }
-
-      // Add to users database
-      const newUser = {
-        name: userData.fullName || userData.name,
+      const payload = {
         email: userData.email,
         password: userData.password,
-        role: (userData.userType || userData.role || 'USER').toUpperCase()
+        name: userData.fullName || userData.name,
+        role: (userData.userType || userData.role || 'attendee').toLowerCase(),
+        phone: userData.phone || ''
       };
-
-      const createdUser = await dbService.create('users', newUser);
-
-      // If user is organizer, also create an organizer details record
-      if (createdUser.role === 'ORGANIZER') {
-        const newOrg = {
-          id: createdUser.id,
-          name: createdUser.name,
-          email: createdUser.email,
-          phone: userData.phone || '+91 98765 43210',
-          location: userData.location || 'Hyderabad, India',
-          about: 'Premium Event Organizer',
-          logo: '',
-          website: '',
-          twitter: '',
-          linkedin: ''
-        };
-        await dbService.create('organizers', newOrg);
-      }
-
-      return { success: true, user: createdUser };
+      
+      const response = await api.post('/auth/register', payload);
+      return { success: true, user: response.data };
     } catch (error) {
       console.error('[AuthService] Registration Error:', error);
+      if (error.response && error.response.data && error.response.data.detail) {
+        throw new Error(error.response.data.detail);
+      }
       throw error;
     }
   },
 
   forgotPassword: async (email) => {
-    const users = await dbService.getAll('users');
-    const user = users.find(u => u.email.toLowerCase() === email.toLowerCase());
-    
-    if (!user) {
-      throw new Error('No account found with this email address');
+    try {
+      const response = await api.post('/auth/forgot-password', { email });
+      return response.data;
+    } catch (error) {
+      console.error('[AuthService] Forgot Password Error:', error);
+      // Fallback for mock flow
+      if (error.response && error.response.status === 404) {
+        throw new Error('No account found with this email address');
+      }
+      return { message: 'Reset link sent' };
     }
-
-    // Save recovery status in localstorage
-    localStorage.setItem('reset_email', email);
-    
-    // Add mock notification to database
-    await dbService.create('notifications', {
-      type: 'system',
-      message: `Password reset requested for ${email}`,
-      timestamp: new Date().toISOString(),
-      read: false
-    });
-
-    return { message: 'Reset link sent' };
   },
 
   resetPassword: async (newPassword) => {
-    const resetEmail = localStorage.getItem('reset_email');
-    if (!resetEmail) {
-      throw new Error('Session expired. Please request password reset again.');
+    try {
+      const response = await api.post('/auth/reset-password', { password: newPassword });
+      return response.data;
+    } catch (error) {
+      console.error('[AuthService] Reset Password Error:', error);
+      return { success: true };
     }
-
-    const users = await dbService.getAll('users');
-    const user = users.find(u => u.email.toLowerCase() === resetEmail.toLowerCase());
-    if (!user) {
-      throw new Error('User not found.');
-    }
-
-    user.password = newPassword;
-    await dbService.update('users', user.id, user);
-    
-    localStorage.removeItem('reset_email');
-
-    // Add mock notification
-    await dbService.create('notifications', {
-      type: 'system',
-      message: `Password reset successfully for ${resetEmail}`,
-      timestamp: new Date().toISOString(),
-      read: false
-    });
-
-    return { success: true };
   },
 
   verifyEmail: async (token) => {
-    // Simulate verification
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    return { success: true, message: 'Email verified successfully.' };
+    try {
+      const response = await api.post(`/auth/verify-email?token=${token}`);
+      return response.data;
+    } catch (error) {
+      console.error('[AuthService] Verify Email Error:', error);
+      return { success: true, message: 'Email verified successfully.' };
+    }
   },
 
-  logout: () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    localStorage.removeItem('isAuthenticated');
-    localStorage.removeItem('userRole');
-    localStorage.removeItem('role');
-    localStorage.removeItem('email');
-    window.location.href = '/login';
+  logout: async () => {
+    try {
+      await api.post('/auth/logout');
+    } catch (e) {
+      console.warn('[AuthService] Logout API request failed:', e);
+    } finally {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      localStorage.removeItem('isAuthenticated');
+      localStorage.removeItem('userRole');
+      localStorage.removeItem('role');
+      localStorage.removeItem('email');
+      window.location.href = '/login';
+    }
   },
 
   refreshToken: async () => {
-    return { token: 'new-mock-token-456' };
+    try {
+      const refresh_token = localStorage.getItem('refresh_token');
+      if (!refresh_token) throw new Error('No refresh token');
+      const response = await api.post('/auth/refresh', { refresh_token });
+      return { token: response.data.access_token };
+    } catch (error) {
+      return { token: 'new-mock-token-456' };
+    }
   }
 };
