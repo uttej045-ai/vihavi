@@ -43,6 +43,49 @@ export const authService = {
   },
 
   login: async (email, password) => {
+    if (import.meta.env.VITE_DEV_AUTH_MODE === 'true') {
+      const emailLower = email.toLowerCase();
+      let role = 'ATTENDEE';
+      let name = 'Premium Attendee';
+      if (emailLower.includes('admin')) {
+        role = 'ADMIN';
+        name = 'System Admin';
+      } else if (emailLower.includes('organizer')) {
+        role = 'ORGANIZER';
+        name = 'Elite Event Manager';
+      }
+
+      const mockUser = {
+        user_id: 'mock-user-123',
+        email: email,
+        role: role,
+        name: name,
+        access_token: 'mock-jwt-token-xyz'
+      };
+
+      localStorage.setItem('token', mockUser.access_token);
+      localStorage.setItem('isAuthenticated', 'true');
+      localStorage.setItem('email', mockUser.email);
+      localStorage.setItem('userRole', role.toLowerCase() === 'organizer' ? 'organizer' : role.toLowerCase() === 'admin' ? 'admin' : 'user');
+      localStorage.setItem('role', role);
+      localStorage.setItem('user', JSON.stringify({
+        id: mockUser.user_id,
+        email: mockUser.email,
+        role: mockUser.role,
+        name: mockUser.name
+      }));
+
+      return { 
+        token: mockUser.access_token, 
+        user: { 
+          id: mockUser.user_id, 
+          email: mockUser.email, 
+          role: mockUser.role, 
+          name: mockUser.name 
+        } 
+      };
+    }
+
     try {
       const response = await api.post('/auth/login', { email, password });
       const data = response.data;
@@ -75,6 +118,17 @@ export const authService = {
   },
 
   register: async (userData) => {
+    if (import.meta.env.VITE_DEV_AUTH_MODE === 'true') {
+      return { 
+        success: true, 
+        user: { 
+          email: userData.email, 
+          name: userData.fullName || userData.name, 
+          role: userData.userType || userData.role || 'attendee' 
+        } 
+      };
+    }
+
     try {
       const payload = {
         email: userData.email,
